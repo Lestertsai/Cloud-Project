@@ -1,6 +1,6 @@
 # NYC Parking Tickets Issued States Prediction
 
-# Motivation
+Motivation
 
 This was a school project where students were required to analyze data either using cloud computing resources or any other tools that could facilitate the speed of processing. We chose Apache Spark as the analytics engine to expedite the data processing other than using R, a language I&#39;m more familiar with but is slower when dealing with data on a large scale. Also, one advantage of utilizing Spark is that Spark SQL provides a domain-specific language to manipulate dataframes in Python which I&#39;m using a lot. Hence, it is easy to get along without spending time learning another new language.
 
