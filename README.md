@@ -1,6 +1,6 @@
 # Prediction of Plate Type from cars being ticketed in NYC 
 
-Apache Spark is one of the great tools to accelerate the speed of big data analysis. Also, one advantage is that Spark SQL provides a domain-specific language to manipulate data frames in Python, which I'm using a lot. Hence, it is easy to get along without spending time learning another new language.
+The NYC Department of Finance collects data on every parking ticket issued in NYC (approximately 10 million per year). This data is made publicly available to aid ticket resolution and guide policymakers. Four files, covering August 2013 to June 2017, are roughly organized by fiscal year (July 1 - June 30). Columns include information about the vehicle ticketed, the ticket issued, location, and time. I would focus on the file in 2015, as the data size is more than 2.7 gigabytes, the largest among all the files. This was an excellent opportunity for me to practice handling big data by Apache Spark other than using R or Pandas. 
 
 How to deal with the data?
 
@@ -10,7 +10,7 @@ What problem was solved?
 
 This project aimed to forecast the plate type of cars being ticketed in New York City. I performed common machine learning models using MLlib, which stands for Spark's machine learning (ML) library, including Naïve Bayes, logistic regression, random forest, and decision trees. To search for the best model, hyperparameter tuning was utilized in the 5-fold cross-validation. Since there were more than 70 plate types in the data set, I selected the ROC AUC to choose the best approach among the four candidates.
 
-What is the result?
+What was the result?
 
 The result indicated that decision trees beat other defendants, with the area under the ROC reaching 0.61 and accuracy reaching 0.75, suggesting that it has a good measure of separability among different cases. The random forest and logistic regression have good prediction capacity as well. In contrast, the Naïve Bayes is not a good choice, indicating that overall, most data preprocessing actions assist models in training. The disadvantage of the Naïve Bayes is that it assumes each feature makes an independent and equal contribution to the outcome. However, judging from the forecast result, this condition is not met in our case because some variables may be more dominant in foretelling the plate type of cars being ticketed in New York City. Besides, tree-based methods do not require normalization or scaling of data. Therefore, they perform well even though many one-hot encoded attributes and attributes have wide ranges in this data set.
 
